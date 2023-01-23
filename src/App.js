@@ -6,10 +6,10 @@ import ThemeProvider from './components/ThemeProvider';
 function App() {
   return (
     <div className="App">
+      <BookContextProvider>
+        <BookList />
+      </BookContextProvider>
       <ThemeProvider>
-        <BookContextProvider>
-          <BookList />
-        </BookContextProvider>
         <Header />
       </ThemeProvider>
 
