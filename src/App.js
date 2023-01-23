@@ -1,17 +1,21 @@
 import './App.css';
-import BookContextProvider from './components/BookContextProvider';
+import NavBar from './components/NavBar';
+import Contact from './components/Contact';
 import BookList from './components/BookList';
-import Header from './components/Header';
-import ThemeProvider from './components/ThemeProvider';
+import BookContextProvider from './components/BookContextProvider';
+import { BrowserRouter, Route, Routes } from 'react-router-dom';
+
 function App() {
   return (
     <div className="App">
-      <BookContextProvider>
-        <BookList />
-      </BookContextProvider>
-      <ThemeProvider>
-        <Header />
-      </ThemeProvider>
+
+      <BrowserRouter>
+        <NavBar />
+        <Routes>
+          <Route path="/" element={<Contact />} />
+          <Route path="/Libros" element={<BookContextProvider><BookList /></BookContextProvider>} />
+        </Routes>
+      </BrowserRouter>
 
     </div>
   );
