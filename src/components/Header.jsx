@@ -4,6 +4,10 @@ import { ThemeContext } from "./ThemeProvider";
 const Header = () => {
 
     const {theme, handleTheme} = useContext(ThemeContext)
+
+    let element = document.body;
+    element.className=theme;
+    
     return (
         <header className={theme}>
             <form >

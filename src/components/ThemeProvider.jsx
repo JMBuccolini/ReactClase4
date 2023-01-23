@@ -3,17 +3,21 @@ import { createContext, useState } from "react";
 export const ThemeContext = createContext();
 
 const ThemeProvider = ({ children }) => {
-    const [theme, setTheme] = useState();
-    let element = document.body;
+    const [theme, setTheme] = useState('light');
+
+   
+    
     const handleTheme = (e) => {
         if (e.target.value === "dark") {
-            setTheme(element.className= 'dark')
+            setTheme('dark')
         } else {
-            setTheme(element.className='light')
+            setTheme('light')
         }
     };
 
-    const data = { theme, handleTheme };
+
+
+    const data = {theme, handleTheme};
 
     return <ThemeContext.Provider value={data}>
                     {children}
