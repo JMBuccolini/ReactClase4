@@ -3,14 +3,14 @@ import NavBar from './components/NavBar';
 import Contact from './components/Contact';
 import BookList from './components/BookList';
 import BookContextProvider from './components/BookContextProvider';
-import { BrowserRouter, Route, Routes } from 'react-router-dom';
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import Header from './components/Header';
 import ThemeProvider from './components/ThemeProvider';
+
 
 function App() {
   return (
     <div className="App">
-
       <BrowserRouter>
         <NavBar />
         <Routes>
@@ -18,10 +18,9 @@ function App() {
           <Route path="/Libros" element={<BookContextProvider><BookList /></BookContextProvider>} />
         </Routes>
         <ThemeProvider>
-        <Header/>
+          <Header />
         </ThemeProvider>
       </BrowserRouter>
-
     </div>
   );
 }
