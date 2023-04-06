@@ -2,25 +2,24 @@ import './App.css';
 import NavBar from './components/NavBar';
 import Contact from './components/Contact';
 import BookList from './components/BookList';
-import BookContextProvider from './components/BookContextProvider';
-import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import Libros from './components/Libros';
 import Header from './components/Header';
 import ThemeProvider from './components/ThemeProvider';
+
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 
 
 function App() {
   return (
     <div className="App">
-      <BrowserRouter>
+      <Router>
         <NavBar />
         <Routes>
           <Route path="/" element={<Contact />} />
-          <Route path="/Libros" element={<BookContextProvider><BookList /></BookContextProvider>} />
+          <Route path="/Libros" element={<Libros><BookList /></Libros>} />
         </Routes>
-        <ThemeProvider>
-          <Header />
-        </ThemeProvider>
-      </BrowserRouter>
+      </Router>
+        <ThemeProvider><Header /></ThemeProvider>
     </div>
   );
 }

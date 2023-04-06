@@ -3,7 +3,7 @@ import {createContext} from 'react'
 
 export const BookContext = createContext()
 
-const BookContextProvider = (props) => { //recibe props para poder llamar a props.children que será el componente <BookList/> "encerrado" en las etiquetas en App.js
+const Libros = (props) => { //recibe props para poder llamar a props.children que será el componente <BookList/> "encerrado" en las etiquetas en App.js
     const [books,setBooks]= useState([
         {id: 1, title: 'Código Da Vinci', author: 'Dan Brown'},
         {id: 2, title: 'Harry Potter', author: 'J. K. Rowling'},
@@ -18,4 +18,4 @@ const BookContextProvider = (props) => { //recibe props para poder llamar a prop
   )
 }
 
-export default BookContextProvider;
+export default Libros;
